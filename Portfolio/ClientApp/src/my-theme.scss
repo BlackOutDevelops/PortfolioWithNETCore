@@ -1,0 +1,57 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// Define a form them
+$form-theme: mat.define-light-theme((
+    color: (
+      primary: mat.define-palette(mat.$gray-palette, 50),
+      accent: mat.define-palette(mat.$gray-palette, 50),
+      warn: mat.define-palette(mat.$red-palette, 500),
+      background: mat.define-palette(mat.$gray-palette, 50),
+      foreground: mat.define-palette(mat.$gray-palette, 50),
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+));
+
+// Define a dark theme
+$dark-theme: mat.define-dark-theme((
+    color: (
+      primary: mat.define-palette(mat.$orange-palette, 300),
+      accent: mat.define-palette(mat.$orange-palette, 500),
+      warn: mat.define-palette(mat.$red-palette, 500),
+      background: mat.define-palette(mat.$red-palette, 500),
+      foreground: mat.define-palette(mat.$red-palette, 500),
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+));
+
+// Define a light theme
+$light-theme: mat.define-light-theme((
+    color: (
+        primary: mat.define-palette(mat.$gray-palette, 50),
+        accent: mat.define-palette(mat.$orange-palette, 500),
+        warn: mat.define-palette(mat.$red-palette, 500),
+        background: mat.define-palette(mat.$red-palette, 500),
+        foreground: mat.define-palette(mat.$red-palette, 500),
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+));
+
+// Apply the dark theme by default
+@include mat.all-component-themes($light-theme);
+
+// Apply the form theme by default
+@include mat.form-field-color($form-theme);
+@include mat.input-color($form-theme);
+
+// Apply the light theme only when the user prefers light themes.
+@media (prefers-color-scheme: light) {
+  // Use the `-color` mixins to only apply color styles without reapplying the same
+  // typography and density styles.
+  @include mat.core-color($light-theme);
+  @include mat.button-color($light-theme);
+}

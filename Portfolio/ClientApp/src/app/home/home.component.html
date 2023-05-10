@@ -1,0 +1,156 @@
+<div class="image-quote-container">
+  <img src="../../assets/images/MyPortfolioHomePageImage.png" />
+
+  <div class="hello-container">
+    <div class="hello-card">
+      <h1 class="hello">Hello, I'm Josh.</h1>
+      <p class="summary">Recent Computer Science/Engineer Graduate | Software Engineer | Front-End Developer | Application Developer </p>
+    </div>
+
+    <div class="buttons">
+      <div>
+        <button mat-raised-button (click)="downloadResume()">Download Resume</button>
+        <label style="display: block;">{{clickMessage}}</label>
+      </div>
+
+      <div>
+        <button mat-raised-button routerLink="contact-me">Contact Me <mat-icon aria-hidden="true">phone</mat-icon></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="carousel-section">
+  <div class="carousel-header">Favorite Projects</div>
+  <carousel [favProjects]="favProjects"></carousel>
+</section>
+
+<div class="resume-container">
+  <section class="skills">
+    <h1>Skills</h1>
+
+    <div class="card">
+      <div class="skills-container">
+        <section class="programming-languages">
+          <h3>Programming Languages</h3>
+          <div class="list-container">
+            <mat-grid-list cols="2" rowHeight="20">
+              <mat-grid-tile *ngFor="let language of programmingLanguages">
+                <div class="grid-text">{{language}}</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </section>
+        <section class="framework-experience">
+          <h3>Framework Experience</h3>
+          <div class="list-container">
+            <mat-grid-list cols="2" rowHeight="20">
+              <mat-grid-tile *ngFor="let framework of frameworkExperience">
+                <div class="grid-text">{{framework}}</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </section>
+        <section class="proficient-tools">
+          <h3>Proficient Tools</h3>
+          <div class="list-container">
+            <mat-grid-list cols="3" rowHeight="20">
+              <mat-grid-tile *ngFor="let tool of proficientTools">
+                <div class="grid-text">{{tool}}</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="education-history">
+    <h1>Education History</h1>
+
+    <div class="card">
+      <table>
+        <tr>
+          <th class="left-column">University of Central Florida</th>
+          <th class="right-column">Orlando, FL</th>
+        </tr>
+        <tr>
+          <td class="left-column">
+            Bachelor of Science in Computer Engineering<br />
+            Minor in Intelligent Robotic Systems<br />
+            GPA: 3.5<br />
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <table>
+        <tr>
+          <th class="left-column">Valencia College</th>
+          <th class="right-column">Kissimmee, FL</th>
+        </tr>
+        <tr>
+          <td class="left-column">
+            Associate of Science in Computer Science<br />
+            GPA: 3.4<br />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="work-history">
+    <h1>Work History</h1>
+
+    <div class="card">
+      <table>
+        <tr>
+          <th class="left-column">Real Estate Developer</th>
+          <th class="right-column">Florida</th>
+        </tr>
+        <tr>
+          <td class="left-column">
+            12/2016-Present<br />
+          </td>
+          <td class="right-column">Self-Employed</td>
+        </tr>
+      </table>
+      <ul>
+        <li>Managed renovation projects while keeping the budget, materials, and time in consideration</li>
+        <li>Collaborated and led teams to follow through project requirements</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <table>
+        <tr>
+          <th class="left-column">Holley Performance Parts</th>
+          <th class="right-column">Sanford, FL</th>
+        </tr>
+        <tr>
+          <td class="left-column">
+            01/2022-04/2022<br />
+          </td>
+          <td class="right-column">Paid Internship</td>
+        </tr>
+      </table>
+      <ul>
+        <li>
+          Worked on an agile team to design and create a customer facing WPF application. The application leveraged databases,
+          cloud resources, secure network connections, encryption, and user level permissions
+        </li>
+        <li>Designed new features, fixed bugs, and collaborated with a team of software engineers to achieve sprint goals</li>
+        <li>
+          Created an application to process and compare two binary files. The application attempts to locate both similarities
+          and differences and provides this information to internal end users which greatly improved their efficiency
+        </li>
+        <li>
+          Updated and re-engineered an existing WPF application to fit MVVM patterns and use multiple threads to improve
+          performance
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+

@@ -1,0 +1,57 @@
+@media (max-width: 1000px) {
+  .carousel-section {
+    visibility: hidden;
+    height: 0px;
+  }
+
+  .grid {
+    grid-template-columns: 100% !important;
+    width: 95% !important;
+    padding: 0px !important;
+  }
+
+  project-card {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+
+  .page-title {
+      font-size: 30vw !important;
+  }
+}
+
+.page-title {
+  width: fit-content;
+  margin: auto;
+  font-family: 'Bebas Neue';
+  font-weight: 500;
+  font-size: 150px;
+  color: white;
+  text-shadow: 0px 0px 15px white;
+}
+
+.carousel-section {
+  margin-bottom: 100px;
+}
+
+.carousel-header {
+  width: fit-content;
+  margin: 50px auto 0px auto;
+  font-family: 'Bebas Neue';
+  font-weight: 500;
+  font-size: 60px;
+  color: white;
+  text-shadow: 0px 0px 15px white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 0px 25px;
+  margin: auto;
+  width: 72.5%;
+}
+
+project-card {
+    height: 500px;
+}

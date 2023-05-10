@@ -1,0 +1,64 @@
+<div class="contact-container">
+  <div class="image-container">
+    Currently located: Florida
+    <section class="skills">
+      Skills:
+
+      <div class="skills-container">
+        <div class="csharp"><span class="skill">C#</span><div class="percentage-bar"><span></span></div></div>
+        <div class="java"><span class="skill">Java</span><div class="percentage-bar"><span></span></div></div>
+        <div class="wpf"><span class="skill">WPF</span><div class="percentage-bar"><span></span></div></div>
+        <div class="angular"><span class="skill">Angular</span><div class="percentage-bar"><span></span></div></div>
+        <div class="react"><span class="skill">React</span><div class="percentage-bar"><span></span></div></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="user-info-container">
+    <h1>Contact Me</h1>
+
+    <section class="contact-information">
+      Email: joshiefrazie@hotmail.com
+    </section>
+    <section class="logo-links">
+      <a href="https://github.com/BlackOutDevelops" target="_blank"><img class="github" src="../../assets/icons/github_logo_black.png" /></a>
+      <a class="fopacity" href="https://www.facebook.com/Xl.Joshie.lX/" target="_blank"><img class="facebook" src="../../assets/icons/facebook_logo.png" /></a>
+      <a class="iopacity" href="https://www.instagram.com/blazincalamity/" target="_blank"><img class="instagram" src="../../assets/icons/instagram_logo.png" /></a>
+      <a class="topacity" href="https://twitter.com/blazincalamity" target="_blank"><img class="twitter" src="../../assets/icons/twitter_logo.png" /></a>
+    </section>
+
+    <div class="user-input-container">
+      <form [formGroup]="emailForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)">
+        <mat-form-field class="email" appearance="outline" hideRequiredMarker="true">
+          <mat-label>Email:</mat-label>
+          <input formControlName="email" matInput placeholder="pat@example.com" required>
+          <mat-error *ngIf="emailForm.controls['email'].invalid == true">{{getEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <div class="phone-opacity">
+          <mat-form-field class="phone" appearance="outline" hideRequiredMarker="true">
+            <mat-label>Phone number:</mat-label>
+            <input formControlName="phone" [(ngModel)]="phone" maxlength="12" matInput placeholder="123-456-7890" (ngModelChange)="addHyphen()" (keydown.delete)="onDelete($event)" required>
+            <mat-error *ngIf="emailForm.controls['phone'].invalid == true">{{getPhoneErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="message-opacity">
+          <mat-form-field class="message" appearance="outline" hideRequiredMarker="true">
+            <mat-label>Message:</mat-label>
+            <textarea formControlName="message" matInput
+                      cdkTextareaAutosize
+                      #autosize="cdkTextareaAutosize"
+                      cdkAutosizeMinRows="10"
+                      cdkAutosizeMaxRows="10" required></textarea>
+            <mat-error *ngIf="emailForm.controls['message'].invalid == true">{{getMessageErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="submit-opacity">
+          <button class="submit-button" mat-raised-button type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

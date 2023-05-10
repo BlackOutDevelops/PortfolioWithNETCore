@@ -1,0 +1,23 @@
+<h3>{{project.name}}</h3>
+
+<div class="description">
+  <div *ngFor="let description of project.description">
+    <p>{{description.paragraph}}</p>
+  </div>
+</div>
+
+<div id="percentageBar" class="percentage-bar" #percentageBar>
+  <div [style.width.%]="language.percentage" *ngFor="let language of project.languages; let first = first; let last = last">
+    <span *ngIf="!first && !last" [style.background-color]="language.color"></span>
+    <span *ngIf="first && last" style="border-radius: 15px;" [style.background-color]="language.color"></span>
+    <span *ngIf="first && !last" style="border-radius: 15px 0px 0px 15px;" [style.background-color]="language.color"></span>
+    <span *ngIf="last && !first" style="border-radius: 0px 15px 15px 0px;" [style.background-color]="language.color"></span>
+  </div>
+</div>
+<section class="language-chip-section">
+  <div matRipple class="language-chips chip-effects" [style.background-color]="language.color" *ngFor="let language of project.languages" (click)="glowBar(language.color)">
+    <span class="language">{{language.name}}</span><span class="percentage">{{language.percentage}}%</span>
+  </div>
+</section>
+
+<h4>Link to project: <a class="links" href="{{project.link}}" target="_blank">{{project.link}}</a></h4>

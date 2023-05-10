@@ -1,0 +1,138 @@
+@media (max-width: 1000px) {
+  .slideshows-container {
+    flex-direction: column !important;
+  }
+
+  .house-container house-slideshow {
+    border-left: none !important;
+  }
+
+  .card {
+    padding: 20px 20px !important;
+  }
+
+  section {
+    width: 95% !important;
+  }
+}
+
+.page-title {
+  width: fit-content;
+  margin: auto;
+  font-family: 'Bebas Neue';
+  font-weight: 500;
+  font-size: 150px;
+  color: white;
+  text-shadow: 0px 0px 15px white;
+}
+
+section:hover {
+  transform: scale(1.01);
+}
+
+section {
+  width: 70%;
+  margin: 50px auto;
+  transition: .2s ease-out;
+}
+
+.header {
+  width: fit-content;
+  margin: 50px 20px 0px 20px;
+  font-family: 'Bebas Neue';
+  font-weight: 500;
+  font-size: 60px;
+  color: white;
+  text-shadow: 0px 0px 15px white;
+}
+
+.card {
+  padding: 20px 60px;
+  margin: auto;
+  box-shadow: 0px 0px 15px white;
+  background-color: var(--main);
+  border-radius: 10px;
+}
+
+img {
+  width: 200px;
+}
+
+.holley-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid .5px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.holley-header-overview {
+  cursor: unset !important;
+}
+
+.content {
+  border-radius: 0px 15px;
+  background-color: lightgray;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0px 1px 7px gray;
+  overflow: scroll;
+}
+
+  .content p {
+    margin: 10px 0px;
+  }
+
+@keyframes moveDown {
+  40% {
+    transform: translateY(7px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.holley-header:hover mat-icon {
+  animation: moveDown 2s both infinite;
+}
+
+h4 {
+  font-family: 'Bebas Neue';
+  font-size: 20px;
+  margin: 0;
+}
+
+.links {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+  .links:hover {
+    color: black;
+  }
+
+.slideshows-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.house-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+  .house-container p {
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    width: 100%;
+    margin: 0px 0px 0px 20px;
+  }
+
+house-slideshow {
+  margin: 30px 0px;
+  padding: 0px 15px;
+}

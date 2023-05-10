@@ -1,0 +1,14 @@
+<div class="previous-item">
+  <button class="left-button" (click)="moveCards('left')" [disabled]="isDisabled()"><mat-icon class="icon">keyboard_double_arrow_left</mat-icon></button>
+  <project-card [project]="previousCard" [@directionPrevious]="directionPrevious"></project-card>
+</div>
+
+<div class="main-item">
+  <project-card [project]="currentCard" [@directionCurrent]="directionCurrent" (@directionCurrent.done)="moveCardCurrentDone($event)" (@directionCurrent.start)="moveCardCurrentStart($event)"></project-card>
+</div>
+
+<div class="next-item">
+  <button class="right-button" (click)="moveCards('right')" [disabled]="isDisabled()"><mat-icon class="icon">keyboard_double_arrow_right</mat-icon></button>
+  <project-card [project]="nextCard" [@directionNext]="directionNext"></project-card>
+</div>
+

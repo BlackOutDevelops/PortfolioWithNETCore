@@ -1,0 +1,10 @@
+<div class="page-title">Projects</div>
+
+<section class="carousel-section">
+  <div class="carousel-header">Favorite Projects</div>
+  <carousel [favProjects]="favProjects"></carousel>
+</section>
+
+<div class="grid">
+  <project-card [project]="project" *ngFor="let project of projects"></project-card>
+</div>

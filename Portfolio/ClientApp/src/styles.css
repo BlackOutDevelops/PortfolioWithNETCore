@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("assets/fonts/BebasNeue-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "VT323";
+  src: url("assets/fonts/VT323-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("assets/fonts/Quicksand-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("assets/fonts/Barlow-Regular.ttf") format('truetype');
+}
+
+:root {
+  --main: #FFFFFFBB;
+  --accent: #f76e66;
+}
+
+video {
+  position: fixed;
+  height: 100vh;
+  object-fit: cover;
+  top: 0;
+  z-index: -1;
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
+body {
+  margin: 0px;
+  padding-top: 80px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  font-family: Barlow;
+  font-weight: 700;
+  height: 100%;
+}
+
+h1, h3 {
+    font-weight: 700;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+app-root {
+  display: block;
+  height: calc(100% - 65px);
+}
+
+html { height: 100%; }

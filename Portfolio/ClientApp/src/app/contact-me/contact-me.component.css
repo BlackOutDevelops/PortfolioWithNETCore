@@ -1,0 +1,305 @@
+@media (max-width: 1000px) {
+  .contact-container {
+    flex-direction: column;
+    width: 100% !important;
+  }
+
+  .image-container {
+    width: 95% !important;
+    margin: auto;
+    border: none !important;
+    float: unset !important;
+  }
+
+  .user-info-container {
+    margin: auto;
+    width: 95% !important;
+    float: unset !important;
+  }
+
+  .user-input-container {
+    width: 95% !important;
+  }
+}
+
+:root {
+    --csharp: 90%;
+    --java: 80%;
+    --wpf: 80%;
+    --angular: 70%;
+    --react: 50%;
+}
+
+:host {
+}
+
+.contact-container {
+  display: flex;
+  align-self: center;
+  margin: auto;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Bebas Neue';
+  font-size: 60px;
+  border-style: solid solid none none;
+  border-color: white;
+  border-radius: 10px;
+  border-width: 10px;
+  width: 40%;
+  color: white;
+}
+
+.skills-container {
+  border-radius: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.skills {
+  margin-top: 20%;
+}
+
+.skill {
+  min-width: 120px;
+}
+
+.csharp, .java, .wpf, .angular, .react {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+}
+
+/*#region Percentage Bar Code */
+.percentage-bar {
+  background-color: #333333;
+  width: 100%;
+  margin-left: 10px;
+  border-radius: 10px;
+  height: 3px;
+  align-self: center;
+  overflow: hidden;
+}
+
+@keyframes fillBarCsharp {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes fillBarJava {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes fillBarWpf {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 70%;
+  }
+}
+
+@keyframes fillBarAngular {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 70%;
+  }
+}
+
+@keyframes fillBarReact {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 60%;
+  }
+}
+
+.csharp .percentage-bar span {
+  animation: fillBarCsharp 2s ease forwards;
+  background-color: blue;
+}
+
+.java .percentage-bar span {
+  animation: fillBarJava 2s ease forwards;
+  background-color: red;
+}
+
+.wpf .percentage-bar span {
+  animation: fillBarWpf 2s ease forwards;
+  background-color: deeppink;
+}
+
+.angular .percentage-bar span {
+  animation: fillBarAngular 2s ease forwards;
+  background-color: lawngreen;
+}
+
+.react .percentage-bar span {
+  animation: fillBarReact 2s ease forwards;
+  background-color: yellow;
+}
+
+.percentage-bar span {
+  display: flex;
+  height: 100%;
+}
+
+/*#endregion*/
+
+.user-info-container {
+  width: 55%;
+  float: right;
+}
+
+h1 {
+  font-family: 'Bebas Neue';
+  font-size: 80px;
+  color: white;
+  line-height: 100px;
+  margin: 0px;
+}
+
+.logo-links a img {
+  height: 40px;
+  margin: 0px 15px 20px 15px;
+  filter: drop-shadow(0px 0px 5px white);
+  object-fit: scale-down;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate(100vw);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes opacity {
+  from, to {
+    opacity: 0;
+  }
+}
+
+@keyframes grow {
+  to {
+    transform: scale(1.4);
+  }
+}
+
+.github {
+  animation: slide 1s linear 1;
+}
+
+.facebook {
+  animation: slide 1s linear;
+  animation-delay: .3s;
+}
+
+.instagram {
+  animation: slide 1s linear;
+  animation-delay: .6s;
+}
+
+.twitter {
+  animation: slide 1s linear;
+  animation-delay: .9s;
+}
+
+.fopacity {
+  animation: opacity .3s linear;
+}
+
+.iopacity {
+  animation: opacity .6s linear;
+}
+
+.topacity {
+  animation: opacity .9s linear;
+}
+
+.email {
+  animation: slide 1s linear;
+}
+
+.phone {
+  width: 100%;
+  animation: slide 1s linear;
+  animation-delay: .3s;
+}
+
+.message {
+  width: 100%;
+  animation: slide 1s linear;
+  animation-delay: .6s;
+}
+
+.phone-opacity {
+  animation: opacity .3s linear;
+}
+
+.message-opacity {
+  animation: opacity .6s linear;
+}
+
+.contact-information {
+  font-family: 'Bebas Neue';
+  font-size: 25px;
+  margin: 0px 15px 70px 0px;
+  color: white;
+}
+
+.user-input-container {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #FFFFFFBB;
+  box-shadow: 0px 0px 15px white;
+  padding: 10px;
+}
+
+mat-form-field {
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  width: 100%;
+  font-size: 15px !important;
+  line-height: 50px;
+  font-family: 'Bebas Neue';
+  background-color: white !important;
+  color: black !important;
+  animation: slide 1s linear;
+  animation-delay: .9s;
+}
+
+.submit-opacity {
+  animation: opacity .9s linear;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

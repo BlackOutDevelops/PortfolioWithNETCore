@@ -1,0 +1,144 @@
+:host:hover {
+    transform: scale(1.02);
+    transition: ease-out .2s;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  background-color: var(--main);
+  margin: 20px 25px 20px 25px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px white;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+  transition: ease-in .2s;
+}
+
+h3 {
+  font-size: 25px;
+  font-family: 'Bebas Neue';
+  margin: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+h4 {
+  font-family: 'Bebas Neue';
+  margin: 0;
+}
+
+.description p {
+  font-size: 18px;
+  margin: 0px 0px 25px 0px;
+}
+
+.description {
+  border-radius: 0px 15px;
+  background-color: lightgray;
+  padding: 20px;
+  margin-bottom: 40px;
+  height: 100%;
+  box-shadow: 0px 1px 7px gray;
+  overflow: scroll;
+}
+
+.language-chip-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.percentage-bar {
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  height: 10px;
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 1px 1px 3px gray;
+}
+
+  .percentage-bar div {
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    height: 10px;
+  }
+
+    .percentage-bar div span {
+      width: 100%;
+    }
+
+.language-chips {
+  display: flex;
+  background-color: gray;
+  color: white;
+  border-radius: 30px;
+  min-width: fit-content;
+  justify-content: space-between;
+  padding: 5px 10px;
+  margin: 10px 0px 10px 5px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+@keyframes mouseOverChip {
+  0% {
+    transform: rotateZ(4deg);
+  }
+
+  20% {
+    transform: rotateZ(0deg);
+  }
+
+  40% {
+    transform: rotateZ(-4deg);
+  }
+
+  60% {
+    transform: rotateZ(0deg);
+  }
+
+  80% {
+    transform: rotateZ(4deg);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.language-chips:hover {
+  opacity: .8;
+  animation: mouseOverChip .3s ease-in forwards;
+}
+
+.chip-effects {
+  box-shadow: 0px 1px 2px gray;
+}
+
+.language {
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.percentage {
+  font-size: 11px;
+  font-style: italic;
+  margin: auto 0px auto 10px;
+  vertical-align: middle !important;
+}
+
+.links {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+  .links:hover {
+    color: black;
+  }

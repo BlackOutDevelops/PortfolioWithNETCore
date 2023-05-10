@@ -1,0 +1,10 @@
+<h1 [style.visibility]="title == null ? 'hidden' : 'visible'">{{title}}</h1>
+<div class="slideshow">
+  <button class="left-button" (click)="move('left')" [disabled]="leftButtonCheck()"><div class="animation-wrapper"><mat-icon class="icon" [style.transform]="scale">keyboard_double_arrow_left</mat-icon></div></button>
+  <div class="images-container">
+    <img [src]="previousImage" [@direction]="direction" [style.left.%]="-100" (@direction.done)="imageAnimationDone($event)" />
+    <img [src]="currentImage" class="main-image" [@direction]="direction" (@direction.done)="imageAnimationDone($event)" #mainImage (window:resize)="updateScale()" (load)="updateScale()" />
+    <img [src]="nextImage" [@direction]="direction" [style.left.%]="100" (@direction.done)="imageAnimationDone($event)" (@direction.start)="imageAnimationStart($event)" />
+  </div>
+  <button class="right-button" (click)="move('right')" [disabled]="rightButtonCheck()"><div class="animation-wrapper"><mat-icon class="icon" [style.transform]="scale">keyboard_double_arrow_right</mat-icon></div></button>
+</div>

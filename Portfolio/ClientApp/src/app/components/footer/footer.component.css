@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-background {
+  position: absolute;
+  background-color: black;
+  left: -15px;
+  height: 110%;
+  width: 110%;
+  opacity: .9;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+@keyframes wiggle {
+    from, to {
+      transform: rotate(15deg) scale(1.4);
+    }
+
+    50% {
+      transform: rotate(-15deg) scale(1.4);
+    }
+}
+
+.logo-links {
+    width: fit-content;
+    margin: auto;
+}
+
+  .logo-links a img {
+    height: 25px;
+    margin: 20px 15px 20px 15px;
+    filter: drop-shadow(0px 0px 2px gray);
+    object-fit: scale-down;
+    transition: .2s ease-out;
+  }
+
+  .logo-links a img:hover {
+    animation: wiggle 1s ease infinite;
+  }
