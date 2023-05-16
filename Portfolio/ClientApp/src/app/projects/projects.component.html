@@ -1,10 +1,24 @@
 <div class="page-title">Projects</div>
 
 <section class="carousel-section">
-  <div class="carousel-header">Favorite Projects</div>
+  <div class="header">Favorite Projects</div>
   <carousel [favProjects]="favProjects"></carousel>
 </section>
 
+<div class="header">All Projects</div>
+
+<section class="filter-section">
+  <div class="filter-label">
+    Filter by language:
+  </div>
+  <div>
+    <select #select class="filter" onfocus='this.size=10;' onblur='this.size=1;' onchange='this.size = 1; this.blur();' (change)="updateGrid(select.value)">
+      <option class="filter-option" value="All">All Languages</option>
+      <option class="filter-option" value="{{language}}" *ngFor="let language of allPossibleLanguages">{{language}}</option>
+    </select>
+  </div>
+</section>
+
 <div class="grid">
-  <project-card [project]="project" *ngFor="let project of projects"></project-card>
+  <project-card [project]="project" [@animation] *ngFor="let project of projects | languageFilter:filter"></project-card>
 </div>

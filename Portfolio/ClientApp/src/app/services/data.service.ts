@@ -42,6 +42,7 @@ interface Language {
   providedIn: 'root'
 })
 export class DataService {
+  public allPossibleLanguages: Set<string> = new Set<string>();
   public languages: Language[] = []
 
   constructor(private githubService: GithubService) { }
@@ -57,6 +58,7 @@ export class DataService {
 
       this.languages.forEach(language => {
         sum += language.bytes;
+        this.allPossibleLanguages.add(language.name);
       })
 
       this.languages.forEach(language => {
@@ -848,9 +850,29 @@ export class DataService {
       ],
       link: "https://github.com/SamiESK/AI_Project"
     },
+    {
+      // 28
+      name: "Portfolio With .NET Core In Angular",
+      languages: this.getLanguages("PortfolioWithNETCore"),
+      description: [
+        {
+          paragraph: "UPDATE! My portfolio is a collection of my work, skills, and achievements, presented in a visually appealing and organized way. As a software developer, I have had the opportunity to work on various projects and tasks that have helped me grow and develop my expertise."
+        },
+        {
+          paragraph: "On my portfolio website, you'll find a homepage that offers a brief introduction and highlights some of my best work. You'll also find an about section that provides more information about my background, experience, and skills. My portfolio section showcases some of my most significant projects, including images, videos, and detailed descriptions."
+        },
+        {
+          paragraph: "Additionally, my services or products page outlines the services or products I offer, their benefits, and pricing. I have also included a contact page where potential clients or customers can easily reach out to me to make inquiries or request my services."
+        },
+        {
+          paragraph: "I created my portfolio website to establish a strong online presence, promote my expertise, and attract potential clients or customers. I am passionate about what I do and take pride in the work I have accomplished. I hope that my portfolio inspires and impresses you and encourages you to reach out to me for any opportunities or collaborations. Thank you for visiting my portfolio!"
+        },
+      ],
+      link: "https://github.com/BlackOutDevelops/PortfolioWithNETCore.git"
+    },
   ]
 
-  public favoriteProjects = [this.projects[8], this.projects[3], this.projects[0], this.projects[7], this.projects[1], this.projects[2], this.projects[4], this.projects[5], this.projects[16], this.projects[25], this.projects[27]];
+  public favoriteProjects = [this.projects[8], this.projects[3], this.projects[28], this.projects[7], this.projects[1], this.projects[2], this.projects[4], this.projects[5], this.projects[16], this.projects[25], this.projects[27]];
 
   public houseOneBeforeImageLocations = [
     {

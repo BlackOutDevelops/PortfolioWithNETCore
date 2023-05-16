@@ -23,6 +23,7 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LanguagePipe } from './pipes/language.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ProjectCardComponent,
     CarouselComponent,
     SlideshowComponent,
-    FooterComponent
+    FooterComponent,
+    LanguagePipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
