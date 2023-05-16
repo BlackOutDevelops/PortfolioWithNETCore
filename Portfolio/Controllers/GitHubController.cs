@@ -15,20 +15,13 @@ namespace Portfolio.Controllers
     [Route("[controller]")]
     public class GitHubController : ControllerBase
     {
-        private readonly IConfiguration _config;
-
-        public GitHubController(IConfiguration config)
-        {
-            _config = config;
-        }
-
         [HttpGet("{repository}/{owner}")]
         public async Task<List<Models.Language>> GetRepositoryLanguages(string repository, string owner = "BlackOutDevelops")
         {
             List<Models.Language> languages = new List<Models.Language>();
             Uri apiUrl = new Uri("https://api.github.com/repos/" + owner + "/" + repository + "/languages");
             GitHubClient client = new GitHubClient(new ProductHeaderValue(repository), apiUrl);
-            client.Credentials = new Credentials(_config["ApiKey"]);
+            client.Credentials = new Credentials(Environment.GetEnvironmentVariable("ApiKey"));
             var githubLanguages = await client.Repository.GetAllLanguages(owner, repository);
 
             foreach (RepositoryLanguage language in githubLanguages)
