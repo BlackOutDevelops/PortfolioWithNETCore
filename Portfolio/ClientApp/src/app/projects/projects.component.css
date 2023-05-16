@@ -74,17 +74,19 @@
 .filter {
   border-radius: 3px;
   margin-left: 20px;
-  background-color: #AAAAAA;
+  background-color: #BBBBBB;
   color: black;
   font-family: Barlow;
   font-size: 20px;
   font-weight: 900;
   scrollbar-width: thin;
   scrollbar-base-color: white;
+  overflow: overlay;
 }
 
 .filter-option {
   font-weight: 900;
+
 }
 
 .grid {

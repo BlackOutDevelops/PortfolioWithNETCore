@@ -34,14 +34,20 @@ h4 {
   margin: 0px 0px 25px 0px;
 }
 
-.description {
-  border-radius: 0px 15px;
-  background-color: lightgray;
-  padding: 20px;
-  margin-bottom: 40px;
+.description-super-div {
   height: 100%;
+  overflow: hidden;
+  padding-right: 4px;
+  background-color: lightgray;
+  border-radius: 0px 15px;
+  margin-bottom: 40px;
   box-shadow: 0px 1px 7px gray;
-  overflow: scroll;
+}
+
+.description {
+  padding: 20px;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .language-chip-section {

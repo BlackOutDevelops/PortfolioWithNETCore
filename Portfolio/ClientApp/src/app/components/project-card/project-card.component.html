@@ -1,8 +1,10 @@
 <h3>{{project.name}}</h3>
 
-<div class="description">
-  <div *ngFor="let description of project.description">
-    <p>{{description.paragraph}}</p>
+<div class="description-super-div">
+  <div class="description">
+    <div *ngFor="let description of project.description">
+      <p>{{description.paragraph}}</p>
+    </div>
   </div>
 </div>
 
