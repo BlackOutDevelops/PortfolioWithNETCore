@@ -21,7 +21,7 @@ namespace Portfolio.Controllers
             List<Models.Language> languages = new List<Models.Language>();
             Uri apiUrl = new Uri("https://api.github.com/repos/" + owner + "/" + repository + "/languages");
             GitHubClient client = new GitHubClient(new ProductHeaderValue(repository), apiUrl);
-            client.Credentials = new Credentials(Environment.GetEnvironmentVariable("ApiKey"));
+            client.Credentials = new Credentials(Environment.GetEnvironmentVariable("GitHubToken"));
             var githubLanguages = await client.Repository.GetAllLanguages(owner, repository);
 
             foreach (RepositoryLanguage language in githubLanguages)
