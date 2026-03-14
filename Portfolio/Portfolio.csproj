@@ -24,8 +24,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\assets\icons\favicon.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\src\assets\icons\favicon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\src\app\components\" />
     <Folder Include="ClientApp\src\app\pipes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\favicon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
