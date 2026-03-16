@@ -35,6 +35,8 @@ export class SlideshowComponent implements OnInit {
   indexCount: number = 0;
   isAnimating: boolean = false;
   scale!: string;
+  private touchStartX: number = 0;
+  private touchEndX: number = 0;
 
   ngOnInit(): void {
     this.previousImage = '../../..' + this.images[this.images.length-1].url;
@@ -89,5 +91,29 @@ export class SlideshowComponent implements OnInit {
 
     this.direction = 'initial';
     this.isAnimating = false;
+  }
+
+  onTouchStart(event: TouchEvent) {
+    this.touchStartX = event.touches[0].clientX;
+  }
+
+  onTouchEnd(event: TouchEvent) {
+    this.touchEndX = event.changedTouches[0].clientX;
+    this.handleSwipe();
+  }
+
+  private handleSwipe() {
+    const swipeThreshold = 50; // Minimum distance for a swipe
+    const swipeDistance = this.touchStartX - this.touchEndX;
+
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+      if (swipeDistance > 0 && !this.rightButtonCheck()) {
+        // Swipe left - move to next image
+        this.move('right');
+      } else if (swipeDistance < 0 && !this.leftButtonCheck()) {
+        // Swipe right - move to previous image
+        this.move('left');
+      }
+    }
   }
 }

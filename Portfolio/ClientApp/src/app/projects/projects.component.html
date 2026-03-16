@@ -19,6 +19,23 @@
   </div>
 </section>
 
-<div class="grid">
-  <project-card [project]="project" [@animation] *ngFor="let project of projects | languageFilter:filter"></project-card>
+<div *ngIf="(hardwareProjects | languageFilter:filter).length > 0">
+  <div class="header">Hardware Projects</div>
+  <div class="grid">
+    <project-card [project]="project" [@animation] *ngFor="let project of hardwareProjects | languageFilter:filter"></project-card>
+  </div>
+</div>
+
+<div *ngIf="(softwareProjects | languageFilter:filter).length > 0">
+  <div class="header">Software Projects</div>
+  <div class="grid">
+    <project-card [project]="project" [@animation] *ngFor="let project of softwareProjects | languageFilter:filter"></project-card>
+  </div>
+</div>
+
+<div *ngIf="(professionalProjects | languageFilter:filter).length > 0">
+  <div class="header">Professional Projects</div>
+  <div class="grid">
+    <project-card [project]="project" [@animation] *ngFor="let project of professionalProjects | languageFilter:filter"></project-card>
+  </div>
 </div>

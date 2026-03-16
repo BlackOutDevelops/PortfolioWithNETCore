@@ -140,11 +140,24 @@ h4 {
   vertical-align: middle !important;
 }
 
+
 .links {
   text-decoration: none;
   color: var(--accent);
+  font-family: 'Bebas Neue';
 }
 
-  .links:hover {
-    color: black;
-  }
+.links a {
+  color: var(--accent) !important;
+  font-family: 'Bebas Neue' !important;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: black !important;
+}
+
+.no-link {
+  color: var(--text);
+  font-style: italic;
+}

@@ -35,6 +35,9 @@ export class ProjectsComponent {
   filter: any;
   animate: any;
   projects = this.dataService.projects;
+  hardwareProjects = this.dataService.hardwareProjects;
+  softwareProjects = this.dataService.softwareProjects;
+  professionalProjects = this.dataService.professionalProjects;
   favProjects = this.dataService.favoriteProjects;
 
   constructor(private dataService: DataService) { }

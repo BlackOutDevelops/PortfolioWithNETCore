@@ -11,31 +11,34 @@ namespace Portfolio.Controllers
     public class EmailController : ControllerBase
     {   
         [HttpPost]
-        public void Post(Email email)
+        public async Task<IActionResult> Post(Email email)
         {
             string to = "joshiefrazie@hotmail.com";
             string from = "joshiefrazie@hotmail.com";
             string subject = "Email From Portfolio Website";
-            string body = "Contact's Email Address: " + email.EmailAddress + 
-                          "\nContact's Phone Number: " + email.PhoneNumber + "\n---------------------------------------------------------------------------------------\n" +
-                          email.Message;
-            MailMessage message = new MailMessage(new MailAddress(from, "Portfolio Message").ToString(), to, subject, body);
+            string body = $"Contact's Email Address: {email.EmailAddress}" +
+                          $"\nContact's Phone Number: {email.PhoneNumber}" +
+                          $"\n{new string('-', 87)}\n{email.Message}";
 
-            SmtpClient smtpClient = new SmtpClient("smtp.office365.com");
-            smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = new NetworkCredential(from, Environment.GetEnvironmentVariable("EmailPassword"));
-            smtpClient.TargetName = "STARTTLS/smtp.office365.com";
-            smtpClient.Port = 587;
-            smtpClient.EnableSsl = true;
+            using var message = new MailMessage(new MailAddress(from, "Portfolio Message").ToString(), to, subject, body);
+            using var smtpClient = new SmtpClient("smtp.office365.com")
+            {
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(from, Environment.GetEnvironmentVariable("EmailPassword")),
+                TargetName = "STARTTLS/smtp.office365.com",
+                Port = 587,
+                EnableSsl = true
+            };
 
             try
             {
-                smtpClient.Send(message);
+                await smtpClient.SendMailAsync(message);
+                return Ok();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: {0}",
-                    ex.ToString());
+                Console.WriteLine("Error: {0}", ex.ToString());
+                return StatusCode(500);
             }
         }
     }

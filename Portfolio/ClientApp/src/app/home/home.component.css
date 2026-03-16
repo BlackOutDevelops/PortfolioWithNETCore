@@ -32,7 +32,7 @@
     flex-direction: column;
   }
 
-  .proficient-tools {
+  .proficient-tools, .hardware-compliance, .methodologies {
     width: 100% !important;
   }
 
@@ -112,18 +112,18 @@
 
 .skills-container {
   display: flex;
+  align-items: stretch;
   direction: ltr;
   margin-bottom: 30px;
   justify-content: space-evenly;
+  gap: 20px;
 }
 
-.programming-languages, .framework-experience {
-  width: 100%;
+.skills-container section {
+  display: flex;
+  flex-direction: column;
 }
 
-.proficient-tools {
-  width: 140%;
-}
 
 h3 {
   padding: 0px 18px;
@@ -132,13 +132,41 @@ h3 {
   font-size: 18px;
   letter-spacing: 1px;
   margin: 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 
-.grid-text {
-  position: absolute;
-  left: 0;
-  margin-left: 10px;
-  white-space: nowrap;
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 5px;
+}
+
+.skill-item {
+  padding: 3px 12px;
+  color: black;
+  text-shadow: 0px 1px 3px var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 20px;
+  font-size: 13px;
+  user-select: none;
+  cursor: default;
+}
+
+@keyframes mouseOverChip {
+  0%   { transform: rotateZ(4deg); }
+  20%  { transform: rotateZ(0deg); }
+  40%  { transform: rotateZ(-4deg); }
+  60%  { transform: rotateZ(0deg); }
+  80%  { transform: rotateZ(4deg); }
+  100% { transform: rotateZ(0deg); }
+}
+
+.skill-item:hover {
+  opacity: .8;
+  animation: mouseOverChip .3s ease-in forwards;
 }
 
 .list-container {
@@ -146,7 +174,7 @@ h3 {
   border-right: solid black 2px;
   border-radius: 10px;
   margin: 0px 1px;
-  height: 100%;
+  flex: 1;
   padding: 5px;
 }
 
@@ -166,7 +194,7 @@ h3 {
   border-radius: 15px;
 }
 
-.education-history, .work-history {
+.education-history, .work-history, .side-jobs {
   margin: 0px auto;
 }
 
@@ -215,3 +243,13 @@ ul {
   list-style: square;
   padding-left: 20px;
 }
+
+.links {
+  text-decoration: none;
+  color: var(--accent);
+  font-family: 'Bebas Neue';
+}
+
+  .links:hover {
+    color: black;
+  }

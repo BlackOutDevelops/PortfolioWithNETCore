@@ -22,4 +22,11 @@
   </div>
 </section>
 
-<h4>Link to project: <a class="links" href="{{project.link}}" target="_blank">{{project.link}}</a></h4>
+<h4>Link to project: 
+  <span *ngIf="project.link.startsWith('http')" class="links">
+    <a href="{{project.link}}" target="_blank">{{project.link}}</a>
+  </span>
+  <span *ngIf="!project.link.startsWith('http')" class="no-link">
+    {{project.link}}
+  </span>
+</h4>

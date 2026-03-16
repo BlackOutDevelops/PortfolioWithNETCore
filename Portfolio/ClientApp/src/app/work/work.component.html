@@ -1,5 +1,87 @@
 <div class="page-title">Work</div>
 
+<section class="medisolv">
+  <div class="header">Software Engineer - Medisolv</div>
+
+  <div class="card">
+    <img src="../../assets/icons/medisolv_logo.png" style="padding-bottom: 25px;" /> <!-- Assuming you have or can add a logo -->
+
+    <h4 class="holley-header holley-header-overview">Overview</h4>
+    <p>
+      As a Software Engineer on the Measure Team at Medisolv, I maintain critical systems for healthcare measure processing. My role involves ensuring the accuracy, performance, and security of applications that handle patient data and regulatory compliance.
+    </p>
+    <p style="font-family: 'Bebas Neue'">Key Technologies: <span style="color: var(--accent);">C#, .NET, WPF, DevExpress, MongoDB, Kubernetes, Docker, Azure</span></p>
+
+    <div class="holley-header" (click)="toggleContent(measureProcessingContent)"><h4>Measure Processing Library</h4><mat-icon>keyboard_double_arrow_down</mat-icon></div>
+
+    <div class="content" #measureProcessingContent>
+      <p>
+        I lead the maintenance of the core measure processing library, a C# repository that powers all measure logic across the company. This includes fixing bugs, optimizing performance, and ensuring compliance with healthcare standards like CMS and TJC.
+      </p>
+      <p>
+        The library serves as the central calculation engine for healthcare quality measures, handling complex algorithms for patient outcome scoring, risk adjustments, and regulatory reporting requirements. It processes millions of patient records while maintaining strict HIPAA compliance and data security standards.
+      </p>
+      <p>
+        Notable achievement: Implemented advanced caching optimizations that delivered a 1,500x performance improvement, reducing calculation times from multiple hours to 8-20 seconds. This breakthrough was recognized in the company LinkedIn post as "Medisolver of the Month" and significantly improved system responsiveness for time-sensitive healthcare reporting.
+      </p>
+      <p>
+        The library is distributed via NuGet packages and integrated across multiple applications, requiring careful version management, comprehensive testing, and coordination with cross-functional teams including QA, DevOps, and product management.
+      </p>
+      <p>
+        My responsibilities include code reviews, performance monitoring, security audits, and implementing new measure calculations as healthcare regulations evolve. This role demands deep understanding of both technical architecture and healthcare industry requirements.
+      </p>
+      <p style="font-family: 'Bebas Neue'">Technologies: <span style="color: var(--accent);">C#, .NET, Azure, SQL Server, HIPAA Compliance, NuGet</span></p>
+    </div>
+
+    <div class="holley-header" (click)="toggleContent(automationToolsContent)"><h4>Automation Tools</h4><mat-icon>keyboard_double_arrow_down</mat-icon></div>
+
+    <div class="content" #automationToolsContent>
+      <p>
+        Developed multiple WPF applications to automate repetitive tasks, significantly improving team efficiency. These include a NuGet reference updater, a data mismatch analyzer for customer support, and a project reference manager.
+      </p>
+      <p>
+        The NuGet Reference Changer automates the process of updating package references across multiple projects, eliminating manual script modifications that previously took significant time for each solution update.
+      </p>
+      <p>
+        The Submission Mismatch Tool processes large datasets (100,000+ patient records) to identify discrepancies between web app submissions and measure results. This tool reduced manual data validation from hours of Excel work to automated 2-3 minute processes, preventing costly submission errors.
+      </p>
+      <p>
+        The Local Reference Changer provides a user-friendly interface for managing project references across solution files, replacing complex manual script editing with intuitive drag-and-drop functionality that works with any combination of solutions and projects.
+      </p>
+      <p>
+        These automation tools collectively saved the development team dozens of hours per week while improving accuracy and reducing deployment issues through consistent, automated processes.
+      </p>
+      <p style="font-family: 'Bebas Neue'">Technologies: <span style="color: var(--accent);">C#, WPF, Excel Integration, .NET Framework</span></p>
+    </div>
+
+    <div class="holley-header" (click)="toggleContent(webAppsContent)"><h4>Web Applications</h4><mat-icon>keyboard_double_arrow_down</mat-icon></div>
+
+    <div class="content" #webAppsContent>
+      <p>
+        Maintain multiple web applications for patient data visualization and measure submission. This includes a MongoDB-based version and a modern variant using Kubernetes, Hive, and Trino for advanced querying and scalability.
+      </p>
+      <p>
+        The MongoDB version serves as the primary patient data management interface, providing healthcare administrators with intuitive dashboards for tracking quality measures, generating compliance reports, and analyzing performance trends across large patient populations.
+      </p>
+      <p>
+        The Trino version represents a modern cloud-native architecture with containerized deployment, distributed data processing, and advanced analytics capabilities. It leverages Kubernetes for auto-scaling, Hive for data warehousing, and Trino for federated queries across multiple data sources.
+      </p>
+      <p>
+        Both applications feature DevExpress UI components for professional, accessible interfaces and integrate seamlessly with the measure processing library for real-time calculations. Security features include role-based access control, audit logging, and encrypted data transmission to meet healthcare industry standards.
+      </p>
+      <p>
+        My work involves maintaining application stability, implementing new features based on user feedback, performance optimization, and ensuring compatibility with evolving healthcare regulations. This includes coordinating with database administrators, security teams, and end-user support staff.
+      </p>
+      <p>
+        These applications serve thousands of healthcare facilities nationwide, processing sensitive patient data while maintaining 99.9% uptime and sub-second response times for critical reporting functions.
+      </p>
+      <p style="font-family: 'Bebas Neue'">Technologies: <span style="color: var(--accent);">C#, ASP.NET, DevExpress, MongoDB, Kubernetes, Docker, Hive, Trino, Azure Cloud</span></p>
+    </div>
+
+    <h4>Link to company website: <a class="links" href="https://www.medisolv.com/" target="_blank">https://www.medisolv.com/</a></h4>
+  </div>
+</section>
+
 <section class="holley">
   <div class="header">.NET Software Engineer Intern</div>
 

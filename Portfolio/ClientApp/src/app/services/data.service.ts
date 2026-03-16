@@ -31,6 +31,11 @@ enum color {
   Clojure = '#607D8B',
   MATLAB = '#FF8F00',
   Jupyter = '#388E3C',
+  MongoDB = '#4DB33D',
+  Trino = '#DD3730',
+  Hive = '#F9C300',
+  Kubernetes = '#326CE5',
+  Docker = '#2496ED',
 };
 
 interface Language {
@@ -178,6 +183,26 @@ export class DataService {
           }
           case "Jupyter Notebook": {
             languageColor = color.Jupyter;
+            break;
+          }
+          case "MongoDB": {
+            languageColor = color.MongoDB;
+            break;
+          }
+          case "Trino": {
+            languageColor = color.Trino;
+            break;
+          }
+          case "Hive": {
+            languageColor = color.Hive;
+            break;
+          }
+          case "Kubernetes": {
+            languageColor = color.Kubernetes;
+            break;
+          }
+          case "Docker": {
+            languageColor = color.Docker;
             break;
           }
           default: {
@@ -811,7 +836,7 @@ export class DataService {
         {
           name: "Python",
           percentage: 100,
-          color: "#2196F3"
+          color: color.Python
         },
       ],
       description: [
@@ -870,9 +895,272 @@ export class DataService {
       ],
       link: "https://github.com/BlackOutDevelops/PortfolioWithNETCore.git"
     },
+    {
+      // 29
+      name: "NuGet Reference Changer",
+      languages: [
+        {
+          name: "C#",
+          percentage: 100,
+          color: color.CSharp
+        }
+      ],
+      description: [
+        {
+          paragraph: "Engineered a WPF application to automate NuGet package reference updates across solution files. Previously, developers manually edited XML in each project file, leading to errors and wasted time."
+        },
+        {
+          paragraph: "The tool requires minimal input: target package version, package name, and solution path. It then scans and updates all relevant project files automatically, ensuring consistency and accuracy."
+        },
+        {
+          paragraph: "This automation transformed a tedious, error-prone process into a one-click operation, significantly boosting development productivity and reducing deployment issues."
+        },
+        {
+          paragraph: "Note: Proprietary company tool; source code not publicly available."
+        },
+      ],
+      link: "Intellectual Property - Not Available"
+    },
+    {
+      // 30
+      name: "Submission Mismatch Tool",
+      languages: [
+        {
+          name: "C#",
+          percentage: 100,
+          color: color.CSharp
+        }
+      ],
+      description: [
+        {
+          paragraph: "Created a WPF application for the customer support team to identify data mismatches between web app submissions and measure results. Previously, finding discrepancies among 100,000+ patients required manual Excel searches taking 10 minutes to hours."
+        },
+        {
+          paragraph: "The tool accepts three inputs: a web app data file, measure results file, and rejection file. It processes the data to pinpoint exact patient mismatches, duplicates, and missing entries."
+        },
+        {
+          paragraph: "Features include real-time logging, progress updates, and Excel export of results. This reduced mismatch identification from hours of manual work to a 2-3 minute automated process."
+        },
+        {
+          paragraph: "Note: Proprietary company tool; source code not publicly available."
+        },
+      ],
+      link: "Intellectual Property - Not Available"
+    },
+    {
+      // 31
+      name: "Local Reference Changer",
+      languages: [
+        {
+          name: "C#",
+          percentage: 100,
+          color: color.CSharp
+        }
+      ],
+      description: [
+        {
+          paragraph: "Built a WPF application to manage local project references across solution files. Previously, adding project references required manual script modifications for each desired combination."
+        },
+        {
+          paragraph: "The application displays solution files in the first column, populates available projects in the second, and allows users to select references to add from other solutions in the third column."
+        },
+        {
+          paragraph: "This automated tool streamlined daily reference management, replacing manual script editing with a user-friendly interface that handles any solution/project combination."
+        },
+        {
+          paragraph: "Note: Proprietary company tool; source code not publicly available."
+        },
+      ],
+      link: "Intellectual Property - Not Available"
+    },
+    {
+      // 32
+      name: "Measure Processing Library",
+      languages: [
+        {
+          name: "C#",
+          percentage: 100,
+          color: color.CSharp
+        }
+      ],
+      description: [
+        {
+          paragraph: "Maintain a core C# library that handles all measure processing logic for the company. This repository manages calculations, validations, and data processing for healthcare measures across multiple applications."
+        },
+        {
+          paragraph: "The library ensures accuracy, security, and performance of measure calculations used by web apps and submission systems. It includes caching optimizations that reduced processing times from hours to 8-20 seconds."
+        },
+        {
+          paragraph: "Distributed via NuGet packages, this library is referenced by multiple repositories and applications, requiring comprehensive maintenance and bug fixes."
+        },
+        {
+          paragraph: "Note: Proprietary company tool; source code not publicly available."
+        },
+      ],
+      link: "Intellectual Property - Not Available"
+    },
+    {
+      // 33
+      name: "Web App - Mongo Version",
+      languages: [
+        {
+          name: "C#",
+          percentage: 50,
+          color: color.CSharp
+        },
+        {
+          name: "HTML",
+          percentage: 15,
+          color: color.HTML
+        },
+        {
+          name: "JavaScript",
+          percentage: 10,
+          color: color.JavaScript
+        },
+        {
+          name: "MongoDB",
+          percentage: 25,
+          color: color.MongoDB
+        }
+      ],
+      description: [
+        {
+          paragraph: "Maintain a web application for displaying and managing patient measure data. Built with DevExpress for the frontend UI components and C# for backend logic, using MongoDB for data storage."
+        },
+        {
+          paragraph: "The application processes and visualizes healthcare measure data, ensuring compliance with CMS and TJC standards. It integrates with the measure processing library for accurate calculations."
+        },
+        {
+          paragraph: "This version uses MongoDB as the primary database, providing flexible document-based storage for complex healthcare data structures."
+        },
+        {
+          paragraph: "Note: Proprietary company tool; source code not publicly available."
+        },
+      ],
+      link: "Intellectual Property - Not Available"
+    },
+    {
+      // 34
+      name: "Web App - Trino Version",
+      languages: [
+        {
+          name: "C#",
+          percentage: 35,
+          color: color.CSharp
+        },
+        {
+          name: "HTML",
+          percentage: 15,
+          color: color.HTML
+        },
+        {
+          name: "JavaScript",
+          percentage: 15,
+          color: color.JavaScript
+        },
+        {
+          name: "Trino",
+          percentage: 15,
+          color: color.Trino
+        },
+        {
+          name: "Hive",
+          percentage: 10,
+          color: color.Hive
+        },
+        {
+          name: "Kubernetes",
+          percentage: 5,
+          color: color.Kubernetes
+        },
+        {
+          name: "Docker",
+          percentage: 5,
+          color: color.Docker
+        }
+      ],
+      description: [
+        {
+          paragraph: "Maintain an updated version of the web application with enhanced architecture. Uses DevExpress for frontend, C# for backend, and incorporates Kubernetes for container orchestration, Hive and Trino for data querying, and Docker for deployment."
+        },
+        {
+          paragraph: "This Trino version improves scalability and performance over the Mongo version, using modern cloud-native technologies for better data processing and deployment flexibility."
+        },
+        {
+          paragraph: "Integrates with the measure processing library and supports advanced analytics through Hive/Trino query engines."
+        },
+        {
+          paragraph: "Note: Proprietary company tool; source code not publicly available."
+        },
+      ],
+      link: "Intellectual Property - Not Available"
+    },
+    {
+      // 35
+      name: "Measure Submission Web App",
+      languages: [
+        {
+          name: "C#",
+          percentage: 100,
+          color: color.CSharp
+        }
+      ],
+      description: [
+        {
+          paragraph: "Maintain a dedicated web application for submitting healthcare measure data. Built entirely in C#, this application handles the secure submission of patient data to external agencies."
+        },
+        {
+          paragraph: "The app integrates with the measure processing library to validate and format data before submission. It ensures compliance with regulatory requirements and provides secure data transmission."
+        },
+        {
+          paragraph: "Separate from the main web apps, this focused application streamlines the submission process for healthcare measure reporting."
+        },
+        {
+          paragraph: "Note: Proprietary company tool; source code not publicly available."
+        },
+      ],
+      link: "Intellectual Property - Not Available"
+    },
   ]
 
-  public favoriteProjects = [this.projects[8], this.projects[3], this.projects[28], this.projects[7], this.projects[1], this.projects[2], this.projects[4], this.projects[5], this.projects[16], this.projects[25], this.projects[27]];
+  public hardwareProjects = [
+    this.projects[6], // Cache Simulator
+    this.projects[8], // Photo-TANK Remote Controller
+    this.projects[9], // Labs for Embedded Systems
+    this.projects[11], // Verilog Project
+    this.projects[15], // Root Locus Implementation
+    this.projects[25], // Branch Predictor
+    this.projects[27] // Line Follower
+  ];
+
+  public professionalProjects = [
+    this.projects[29], // NuGet Reference Changer
+    this.projects[30], // Submission Mismatch Tool
+    this.projects[31], // Local Reference Changer
+    this.projects[32], // Measure Processing Library
+    this.projects[33], // Web App - Mongo Version
+    this.projects[34], // Web App - Trino
+    this.projects[35] // Measure Submission Web App
+  ];
+
+  public softwareProjects = this.projects.filter((_, index) => ![6, 8, 9, 11, 15, 25, 27, 29, 30, 31, 32, 33, 34, 35].includes(index));
+
+  public favoriteProjects = [
+    this.projects[8],  // Photo-TANK Remote Controller
+    this.projects[3],  // Clippy
+    this.projects[28], // Portfolio With .NET Core In Angular
+    this.projects[4],  // Shipping Management With Multithreading
+    this.projects[16], // FileDotCom
+    this.projects[6],  // Cache Simulator
+    this.projects[9],  // Labs for Embedded Systems
+    this.projects[11], // Verilog Project
+    this.projects[25], // Branch Predictor
+    this.projects[27], // Line Follower
+    this.projects[29], // NuGet Reference Changer
+    this.projects[30], // Submission Mismatch Tool
+    this.projects[32], // Measure Processing Library
+  ];
 
   public houseOneBeforeImageLocations = [
     {

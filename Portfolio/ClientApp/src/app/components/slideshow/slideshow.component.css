@@ -29,19 +29,27 @@ h1 {
 button {
   position: absolute;
   height: 100%;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.1);
   color: white;
-  border: none;
+  border: 0px;
   z-index: 1;
-  opacity: .4;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
   button:active {
-    opacity: .1;
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   button:disabled {
     opacity: 0;
+    pointer-events: none;
+  }
+
+  button:hover {
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
 .left-button {
@@ -77,3 +85,4 @@ button {
 .right-button:hover .animation-wrapper {
   animation: wiggleRight 1.5s infinite;
 }
+

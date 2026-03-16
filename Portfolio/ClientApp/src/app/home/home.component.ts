@@ -11,10 +11,13 @@ declare var anime: any;
 export class HomeComponent implements AfterViewInit {
   favProjects = this.dataService.favoriteProjects;
   clickMessage: string = "";
-  programmingLanguages: Array<string> = ['C', 'Java', 'SQL', 'Python', 'C++', 'C#', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'Kotlin for Android'];
-  frameworkExperience: Array<string> = ['Angular.js', 'React.js', 'WPF', 'WinForms', '.NET Framework', '.NET Core'];
+  programmingLanguages: Array<string> = ['C', 'Java', 'SQL', 'MQL', 'CQL', 'Python', 'C++', 'C#', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'XML', 'JSON', 'Kotlin for Android', 'Verilog', 'Assembly', 'MIPS', 'MATLAB'];
+  frameworkExperience: Array<string> = ['Angular.js', 'React.js', 'WPF', 'WinForms', '.NET Framework', '.NET Core', 'DevExpress', 'MongoDB', 'Kubernetes', 'Docker'];
   proficientTools: Array<string> = ['Bash', 'Eclipse', 'Code Composer', 'Visual Studio', 'Atom', 'Intellij IDEA', 'Windows', 'Ubuntu', 'MobaXterm', 'TortoiseSVN', 'SVN', 'GIT',
-    'Github', 'Android Studio', 'Azure DevOps'];
+    'Github', 'Android Studio', 'Azure DevOps', 'Azure Repos', 'Azure Blob Storage', 'Hive', 'Trino', 'Fusion 360'];
+  hardwareAndCompliance: Array<string> = ['FPGA', 'PCB Design', 'Circuit Design', 'Embedded Systems', 'Digital Logic Design', 'Hardware Synthesis', 'Cache Architecture', 'Branch Prediction', 'Jetson Nano', 'PID Control', 'Bluetooth', 'Arduino', 'Texas Instruments', 'Servo Integration', 'Motor Integration', 'Microcontrollers'];
+  methodologies: Array<string> = ['Agile', 'Scrum', 'CI/CD', 'HIPAA Compliance'];
+  aiAndMl: Array<string> = ['TensorFlow', 'PyTorch', 'YOLO', 'ResNet', 'OpenCV', 'Computer Vision', 'Model Training', 'Machine Learning', 'Robotics', 'Perceptron Algorithm', 'Claude AI', 'GitHub Copilot', 'ChatGPT', 'Augment'];
 
   constructor(private dataService: DataService) { }
 
