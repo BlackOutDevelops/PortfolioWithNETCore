@@ -1,3 +1,9 @@
+@media (max-width: 1000px) {
+  .description-super-div {
+    max-height: 300px;
+  }
+}
+
 :host:hover {
     transform: scale(1.02);
     transition: ease-out .2s;

@@ -20,6 +20,17 @@
     margin-right: 0px !important;
   }
 
+  .filter-section {
+    width: 95% !important;
+    height: auto !important;
+    flex-wrap: wrap;
+    margin: 10px auto;
+  }
+
+  .filter-label {
+    white-space: nowrap;
+  }
+
   .page-title {
       font-size: 30vw !important;
   }
