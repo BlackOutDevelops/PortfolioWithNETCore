@@ -12,6 +12,10 @@
   }
 
   project-card {
+    height: auto !important;
+  }
+
+  project-card {
     margin-left: 0px !important;
     margin-right: 0px !important;
   }

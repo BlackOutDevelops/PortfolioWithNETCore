@@ -21,11 +21,13 @@
 
   .buttons {
     width: fit-content;
+    flex-wrap: wrap;
   }
 
   .carousel-section {
     visibility: hidden;
     height: 0px;
+    margin-top: 0;
   }
 
   .skills-container {
@@ -102,7 +104,10 @@
     font-weight: bold;
     color: black !important;
     background-color: white !important;
-    font-family: 'Bebas Neue'
+    font-family: 'Bebas Neue';
+    white-space: nowrap;
+    padding: 0 16px;
+    line-height: 36px;
   }
 
   .button-wrapper {
@@ -231,6 +236,8 @@ h1 {
   padding: 10px;
   margin-bottom: 20px;
   transition: ease-out .2s;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
   .card th {
