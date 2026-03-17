@@ -10,9 +10,10 @@ declare var anime: any;
 })
 export class HomeComponent implements AfterViewInit {
   favProjects = this.dataService.favoriteProjects;
-  clickMessage: string = "";
+  softwareMessage: string = "";
+  hardwareMessage: string = "";
   programmingLanguages: Array<string> = ['C', 'Java', 'SQL', 'MQL', 'CQL', 'Python', 'C++', 'C#', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'XML', 'JSON', 'Kotlin for Android', 'Verilog', 'Assembly', 'MIPS', 'MATLAB'];
-  frameworkExperience: Array<string> = ['Angular.js', 'React.js', 'WPF', 'WinForms', '.NET Framework', '.NET Core', 'DevExpress', 'MongoDB', 'Kubernetes', 'Docker'];
+  frameworkExperience: Array<string> = ['Angular.js', 'React.js', 'WPF', 'WinForms', '.NET Framework', '.NET Core', 'Razor Pages', 'DevExpress', 'MongoDB', 'Kubernetes', 'Docker'];
   proficientTools: Array<string> = ['Bash', 'Eclipse', 'Code Composer', 'Visual Studio', 'Atom', 'Intellij IDEA', 'Windows', 'Ubuntu', 'MobaXterm', 'TortoiseSVN', 'SVN', 'GIT',
     'Github', 'Android Studio', 'Azure DevOps', 'Azure Repos', 'Azure Blob Storage', 'Hive', 'Trino', 'Fusion 360'];
   hardwareAndCompliance: Array<string> = ['FPGA', 'PCB Design', 'Circuit Design', 'Embedded Systems', 'Digital Logic Design', 'Hardware Synthesis', 'Cache Architecture', 'Branch Prediction', 'Jetson Nano', 'PID Control', 'Bluetooth', 'Arduino', 'Texas Instruments', 'Servo Integration', 'Motor Integration', 'Microcontrollers'];
@@ -21,17 +22,21 @@ export class HomeComponent implements AfterViewInit {
 
   constructor(private dataService: DataService) { }
 
-  downloadResume() {
-    this.clickMessage = "Downloading Resume...";
+  downloadResume(type: 'software' | 'hardware') {
+    const fileName = type === 'software' ? 'Software Resume.pdf' : 'Hardware Resume.pdf';
+    const setMessage = (msg: string) => {
+      if (type === 'software') this.softwareMessage = msg;
+      else this.hardwareMessage = msg;
+    };
+    setMessage('✓ Downloaded!');
     const link = document.createElement('a');
     link.setAttribute('target', '_blank');
-    link.setAttribute('href', '../../assets/files/Resume.pdf');
-    link.setAttribute('download', 'Resume.pdf');
+    link.setAttribute('href', `../../assets/files/${fileName}`);
+    link.setAttribute('download', fileName);
     document.body.appendChild(link);
     link.click();
     link.remove();
-    this.clickMessage = "Resume Downloaded";
-    setTimeout(() => this.clickMessage = "", 1000);
+    setTimeout(() => setMessage(''), 2000);
   }
 
   ngAfterViewInit() {

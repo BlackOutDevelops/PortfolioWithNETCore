@@ -59,6 +59,10 @@
     color: white;
   }
 
+    .drop-down-links a:last-child {
+      margin-bottom: 20px;
+    }
+
     .drop-down-links a:hover {
       color: var(--accent) !important;
     }

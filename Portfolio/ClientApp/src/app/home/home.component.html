@@ -8,9 +8,13 @@
     </div>
 
     <div class="buttons">
-      <div>
-        <button mat-raised-button (click)="downloadResume()">Download Resume</button>
-        <label style="display: block;">{{clickMessage}}</label>
+      <div class="button-wrapper">
+        <button mat-raised-button (click)="downloadResume('software')">Software Resume</button>
+        <label class="download-toast" *ngIf="softwareMessage">{{softwareMessage}}</label>
+      </div>
+      <div class="button-wrapper">
+        <button mat-raised-button (click)="downloadResume('hardware')">Hardware Resume</button>
+        <label class="download-toast" *ngIf="hardwareMessage">{{hardwareMessage}}</label>
       </div>
 
       <div>
