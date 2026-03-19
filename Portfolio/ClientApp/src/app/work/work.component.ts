@@ -1,5 +1,4 @@
-import { keyframes } from '@angular/animations';
-import { AfterViewChecked, AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -14,10 +13,6 @@ export class WorkComponent implements AfterViewInit {
   @ViewChild('measureProcessingContent') measureProcessingContent!: ElementRef;
   @ViewChild('automationToolsContent') automationToolsContent!: ElementRef;
   @ViewChild('webAppsContent') webAppsContent!: ElementRef;
-  houseOneBeforeImageLocations = this.dataService.houseOneBeforeImageLocations;
-  houseOneAfterImageLocations = this.dataService.houseOneAfterImageLocations;
-  houseTwoBeforeImageLocations = this.dataService.houseTwoBeforeImageLocations;
-  houseTwoAfterImageLocations = this.dataService.houseTwoAfterImageLocations;
 
   constructor(private dataService: DataService) { };
 

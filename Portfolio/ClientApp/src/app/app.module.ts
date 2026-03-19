@@ -18,6 +18,7 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { HomeComponent } from './home/home.component';
 import { WorkComponent } from './work/work.component';
+import { HobbiesComponent } from './hobbies/hobbies.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -32,6 +33,7 @@ import { LanguagePipe } from './pipes/language.pipe';
     HomeComponent,
     ProjectsComponent,
     WorkComponent,
+    HobbiesComponent,
     ContactMeComponent,
     ProjectCardComponent,
     CarouselComponent,
@@ -55,6 +57,7 @@ import { LanguagePipe } from './pipes/language.pipe';
       { path: '', pathMatch: 'full', component: HomeComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'work', component: WorkComponent },
+      { path: 'hobbies', component: HobbiesComponent },
       { path: 'contact-me', component: ContactMeComponent }
     ], { scrollPositionRestoration: 'enabled' }),
     BrowserAnimationsModule,
