@@ -11,10 +11,10 @@
   <div class="filter-label">
     Filter by language:
   </div>
-  <div>
+  <div class="filter-wrapper">
     <select #select class="filter" onfocus='this.size=10;' onblur='this.size=1;' onchange='this.size = 1; this.blur();' (change)="updateGrid(select.value)">
       <option class="filter-option" value="All">All Languages</option>
-      <option class="filter-option" value="{{language}}" *ngFor="let language of allPossibleLanguages">{{language}}</option>
+      <option class="filter-option" value="{{language}}" *ngFor="let language of sortedLanguages">{{language}}</option>
     </select>
   </div>
 </section>
@@ -22,20 +22,34 @@
 <div *ngIf="(hardwareProjects | languageFilter:filter).length > 0">
   <div class="header">Hardware Projects</div>
   <div class="grid">
-    <project-card [project]="project" [@animation] *ngFor="let project of hardwareProjects | languageFilter:filter"></project-card>
+    <project-card [project]="project" [@animation] *ngFor="let project of hardwareProjects | languageFilter:filter" (descriptionOpened)="openModal($event.project, $event.event)"></project-card>
   </div>
 </div>
 
 <div *ngIf="(softwareProjects | languageFilter:filter).length > 0">
   <div class="header">Software Projects</div>
   <div class="grid">
-    <project-card [project]="project" [@animation] *ngFor="let project of softwareProjects | languageFilter:filter"></project-card>
+    <project-card [project]="project" [@animation] *ngFor="let project of softwareProjects | languageFilter:filter" (descriptionOpened)="openModal($event.project, $event.event)"></project-card>
   </div>
 </div>
 
 <div *ngIf="(professionalProjects | languageFilter:filter).length > 0">
   <div class="header">Professional Projects</div>
   <div class="grid">
-    <project-card [project]="project" [@animation] *ngFor="let project of professionalProjects | languageFilter:filter"></project-card>
+    <project-card [project]="project" [@animation] *ngFor="let project of professionalProjects | languageFilter:filter" (descriptionOpened)="openModal($event.project, $event.event)"></project-card>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="modalProject" [@modalAnimation] (click)="closeModal()">
+  <div class="modal-content" [style.transformOrigin]="modalOriginX + ' ' + modalOriginY" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>{{modalProject.name}}</h3>
+      <mat-icon class="modal-close" (click)="closeModal()">close</mat-icon>
+    </div>
+    <div class="modal-body">
+      <div *ngFor="let description of modalProject.description">
+        <p>{{description.paragraph}}</p>
+      </div>
+    </div>
   </div>
 </div>

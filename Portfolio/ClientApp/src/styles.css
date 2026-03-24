@@ -23,6 +23,17 @@
   --main: #FFFFFFBB;
   --accent: #f76e66;
   --text: #333333;
+  --bebas-spacing: 1px;
+}
+
+/* Centralized Bebas Neue letter-spacing */
+h1, h3, h4,
+.page-title, .header, .filter-label, .carousel-header,
+.hello, .logo, .contact-information, .image-container,
+.submit-button, .card th, .links, .drop-down-links a,
+.links a, .buttons button,
+[style*="Bebas Neue"] {
+  letter-spacing: var(--bebas-spacing);
 }
 
 video {
@@ -32,6 +43,7 @@ video {
   top: 0;
   z-index: -1;
   width: 100%;
+  pointer-events: none;
 }
 
 body {

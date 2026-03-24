@@ -6,13 +6,9 @@
   }
 
   .grid {
-    grid-template-columns: 100% !important;
+    columns: 1 !important;
     width: 95% !important;
     padding: 0px !important;
-  }
-
-  project-card {
-    height: auto !important;
   }
 
   project-card {
@@ -86,9 +82,18 @@
   margin: auto 0px;
 }
 
+.filter-wrapper {
+  position: relative;
+  align-self: center;
+  min-width: 200px;
+  height: 30px;
+}
+
 .filter {
+  position: absolute;
+  top: 0;
+  left: 20px;
   border-radius: 3px;
-  margin-left: 20px;
   background-color: #BBBBBB;
   color: black;
   font-family: Barlow;
@@ -105,13 +110,64 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  padding: 0px 25px;
+  columns: 3;
+  column-gap: 0;
+  padding: 20px 25px 0px 25px;
   margin: auto;
   width: 72.5%;
 }
 
-project-card {
-    height: 500px;
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  max-width: 700px;
+  width: 90%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.modal-header h3 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 22px;
+  font-family: 'Bebas Neue';
+}
+
+.modal-close {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  font-size: 16px;
+  line-height: 1.6;
 }

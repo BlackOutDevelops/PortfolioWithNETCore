@@ -2,6 +2,8 @@
   position: relative;
   display: flex;
   margin-bottom: 150px;
+  background-color: black;
+  margin-top: 50px;
 }
 
 project-card {
@@ -20,7 +22,7 @@ button {
   color: transparent;
   border: none;
   font-size: 5vw;
-  height: 540px;
+  height: 500px;
   width: 100%;
   z-index: 1;
 }
@@ -41,7 +43,7 @@ button {
 
 .left-button {
   left: 0%;
-  margin: 20px 0px 0px 25px;
+  margin: 0px 0px 0px 25px;
   text-align: left;
   padding-left: 30%;
 }
@@ -58,7 +60,7 @@ button {
 
 .right-button {
   right: 0%;
-  margin: 20px 25px 0px 0px;
+  margin: 0px 25px 0px 0px;
   text-align: right;
   padding-right: 30%;
 }

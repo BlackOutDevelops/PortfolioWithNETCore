@@ -1,7 +1,4 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ElementRef, Input, OnInit, QueryList, ViewChild } from '@angular/core';
-import { elementAt } from 'rxjs';
-import { TimerHandle } from 'rxjs/internal/scheduler/timerHandle';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'project-card',
@@ -10,9 +7,14 @@ import { TimerHandle } from 'rxjs/internal/scheduler/timerHandle';
 })
 export class ProjectCardComponent {
   @Input() project: any;
-  @ViewChild('percentageBar')
-  percentageBar!: ElementRef;
+  @Input() collapsible = true;
+  @Output() descriptionOpened = new EventEmitter<{ project: any, event: MouseEvent }>();
+  @ViewChild('percentageBar') percentageBar!: ElementRef;
   animation!: Animation;
+
+  openModal(event: MouseEvent) {
+    this.descriptionOpened.emit({ project: this.project, event });
+  }
 
   glowBar(color: string) {
     const percentageBar = this.percentageBar.nativeElement as HTMLElement;

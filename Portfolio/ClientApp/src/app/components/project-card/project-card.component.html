@@ -1,6 +1,11 @@
 <h3>{{project.name}}</h3>
 
-<div class="description-super-div">
+<div *ngIf="collapsible" class="description-trigger" (click)="openModal($event)">
+  <h4>Description</h4>
+  <mat-icon>open_in_new</mat-icon>
+</div>
+
+<div *ngIf="!collapsible" class="description-super-div">
   <div class="description">
     <div *ngFor="let description of project.description">
       <p>{{description.paragraph}}</p>
@@ -22,7 +27,7 @@
   </div>
 </section>
 
-<h4>Link to project: 
+<h4>Link to project:
   <span *ngIf="project.link.startsWith('http')" class="links">
     <a href="{{project.link}}" target="_blank">{{project.link}}</a>
   </span>
